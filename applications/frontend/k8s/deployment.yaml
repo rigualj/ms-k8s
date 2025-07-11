@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: microservices
+  namespace: <+values.namespace>
   labels:
     app: frontend
 spec:
-  replicas: 2
+  replicas: <+values.replicas>
   selector:
     matchLabels:
       app: frontend
@@ -56,8 +56,8 @@ spec:
               name: frontend-config
           resources:
             requests:
-              cpu: 100m
-              memory: 64Mi
+              cpu: <+values.cpu_request>
+              memory: <+values.memory_request>
             limits:
-              cpu: 200m
-              memory: 128Mi
+              cpu: <+values.cpu_limit>
+              memory: <+values.memory_limit>

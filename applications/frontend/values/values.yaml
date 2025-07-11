@@ -1,0 +1,16 @@
+# applications/frontend/values/values.yaml
+# Base values matching original Google manifest
+
+# Deployment (Google used default namespace, no replicas specified = 1)
+namespace: microservices
+replicas: 1
+
+# Resources (exact match from Google manifest)
+cpu_request: "100m"
+memory_request: "64Mi"
+cpu_limit: "200m" 
+memory_limit: "128Mi"
+
+# Environment variables (from Google's original ConfigMap)
+ENV_PLATFORM: ""  # Google left this empty/commented
+ENABLE_PROFILER: "0"

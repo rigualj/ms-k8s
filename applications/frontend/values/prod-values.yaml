@@ -1,0 +1,10 @@
+# applications/frontend/values/prod-values.yaml
+# Production values - EXACT MATCH to original Google manifest
+namespace: microservices
+replicas: 1
+cpu_request: "100m"
+memory_request: "64Mi" 
+cpu_limit: "200m"
+memory_limit: "128Mi"
+ENV_PLATFORM: ""  # Google left this empty (defaults to auto-detect)
+ENABLE_PROFILER: "0"
